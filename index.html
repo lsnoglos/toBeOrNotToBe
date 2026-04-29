@@ -1,270 +1,276 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 9: Delitos Informáticos y Auditoría (Ley 1042)</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary: #1e293b;
-            --secondary: #0f172a;
-            --accent: #ef4444; /* Rojo para alertas/delitos */
-            --legal: #3b82f6;  /* Azul legal */
-            --bg: #f8fafc;
-            --text: #334155;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maestro Programador</title>
 
-        body {
-            background-color: #cbd5e1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-            margin: 0;
-            padding: 50px 0;
-            font-family: 'DM Sans', sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .slide {
-            background: white;
-            width: 1280px;
-            height: 720px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            padding: 60px;
-        }
+body{
+    font-family:Arial, sans-serif;
+    background:#eaf6ff;
+    display:flex;
+    height:100vh;
+}
 
-        h1, h2 {
-            font-family: 'Merriweather', serif;
-            margin: 0;
-        }
+/* PANEL IZQUIERDO */
+.panel{
+    width:35%;
+    background:white;
+    padding:20px;
+    overflow:auto;
+    border-right:3px solid #d9eaff;
+}
 
-        .slide-header {
-            border-left: 8px solid var(--accent);
-            padding-left: 25px;
-            margin-bottom: 40px;
-        }
+.panel h2{
+    color:#0077cc;
+    margin-bottom:15px;
+}
 
-        .slide-header h2 {
-            font-size: 48px;
-            color: var(--primary);
-        }
+label{
+    display:block;
+    margin-top:12px;
+    font-weight:bold;
+}
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            height: 100%;
-        }
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
 
-        /* Estilos específicos para contenido */
-        .card {
-            background: #f1f5f9;
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #e2e8f0;
-        }
+input[type="color"]{
+    height:45px;
+}
 
-        .law-badge {
-            background: var(--legal);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
+/* CENTRO */
+.preview{
+    width:35%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
 
-        .icon-box {
-            font-size: 40px;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
+.contenedor{
+    width:100%;
+    max-width:420px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
 
-        .highlight-box {
-            background: var(--primary);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-        }
+h1{
+    color:#0077cc;
+}
 
-        .step-list {
-            list-style: none;
-            padding: 0;
-        }
+img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:15px 0;
+}
 
-        .step-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 20px;
-        }
+.servicio{
+    background:#dff5e1;
+    padding:10px;
+    border-radius:10px;
+    margin-top:15px;
+    font-weight:bold;
+}
 
-        .step-list i { color: var(--legal); }
+footer{
+    margin-top:20px;
+    color:gray;
+}
 
-        .case-label {
-            background: #fee2e2;
-            color: #991b1b;
-            padding: 4px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+/* DERECHA */
+.codigo{
+    width:30%;
+    background:#1e1e1e;
+    color:#00ff88;
+    padding:15px;
+    overflow:auto;
+}
 
-        footer {
-            position: absolute;
-            bottom: 30px;
-            left: 60px;
-            font-size: 14px;
-            color: #94a3b8;
-        }
-    </style>
+.codigo h2{
+    color:white;
+    margin-bottom:10px;
+}
+
+pre{
+    white-space:pre-wrap;
+    font-size:14px;
+    line-height:1.4;
+}
+</style>
 </head>
+
 <body>
 
-<!-- Slide 1: Portada -->
-<div class="slide" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; justify-content: center; align-items: center; text-align: center;">
-    <div style="max-width: 900px;">
-        <h3 style="color: #ef4444; text-transform: uppercase; letter-spacing: 3px;">Semana 9 - Auditoría de Sistemas</h3>
-        <h1 style="font-size: 72px; margin: 20px 0;">Marco Legal de los Delitos Informáticos</h1>
-        <p style="font-size: 28px; color: #94a3b8;">Aplicación de la Ley 1042 (Nicaragua) en la práctica del Auditor</p>
-        <div style="margin-top: 50px; height: 5px; background: #ef4444; width: 100px; display: inline-block;"></div>
-    </div>
+<!-- PANEL -->
+<div class="panel">
+
+<h2>🎨 Editor del Alumno</h2>
+
+<label>Nombre:</label>
+<input type="text" id="nombre" value="Carlos Noel">
+
+<label>Profesión:</label>
+<input type="text" id="profesion" value="Doctor">
+
+<label>Descripción:</label>
+<textarea id="descripcion">Cuando sea grande quiero ayudar a las personas.</textarea>
+
+<label>Servicio:</label>
+<input type="text" id="servicio" value="🩺 Ofrezco consultas médicas">
+
+<label>Foto Local:</label>
+<input type="file" id="fotoLocal" accept="image/*">
+
+<label>Color del BODY:</label>
+<input type="color" id="colorBody" value="#eaf6ff">
+
+<label>Color del CONTENEDOR:</label>
+<input type="color" id="colorCaja" value="#ffffff">
+
+<label>Color del título:</label>
+<input type="color" id="colorTitulo" value="#0077cc">
+
 </div>
 
-<!-- Slide 2: Conexión -->
-<div class="slide">
-    <div class="slide-header">
-        <h2>¿Por qué ahora?</h2>
-    </div>
-    <div class="grid-2">
-        <div class="card">
-            <h3>Trayectoria del curso</h3>
-            <ul class="step-list">
-                <li><i class="fas fa-check-circle"></i> Planificación técnica</li>
-                <li><i class="fas fa-check-circle"></i> Recopilación de evidencias</li>
-                <li><i class="fas fa-check-circle"></i> Análisis de riesgos</li>
-                <li><i class="fas fa-check-circle"></i> Elaboración de informes</li>
-            </ul>
-        </div>
-        <div class="highlight-box" style="display: flex; flex-direction: column; justify-content: center;">
-            <i class="fas fa-balance-scale" style="font-size: 80px; margin-bottom: 30px; color: #ef4444;"></i>
-            <h3 style="font-size: 32px;">Punto Crítico</h3>
-            <p>"Un hallazgo técnico en auditoría puede ser la base de una denuncia penal."</p>
-        </div>
-    </div>
-    <footer>UCC - Ingeniería de Sistemas</footer>
+<!-- PREVIEW -->
+<div class="preview">
+
+<div class="contenedor" id="caja">
+
+<h1 id="titulo">Soy Carlos Noel, futuro Doctor</h1>
+
+<img id="imagen"
+src="https://cdn.pixabay.com/photo/2017/08/06/00/24/doctor-2587298_1280.jpg">
+
+<p id="texto">
+Cuando sea grande quiero ayudar a las personas.
+</p>
+
+<div class="servicio" id="servicioBox">
+🩺 Ofrezco consultas médicas
 </div>
 
-<!-- Slide 3: La Ley 1042 -->
-<div class="slide">
-    <div class="slide-header">
-        <h2>Ley Especial de Ciberdelitos</h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
-        <div class="card">
-            <span class="law-badge">Art. 4</span>
-            <h4>Acceso Indebido</h4>
-            <p style="font-size: 16px;">Ingreso a un sistema informático sin autorización o excediendo la misma.</p>
-        </div>
-        <div class="card">
-            <span class="law-badge">Art. 9</span>
-            <h4>Daño de Datos</h4>
-            <p style="font-size: 16px;">Borrado, deterioro, alteración o supresión de datos informáticos.</p>
-        </div>
-        <div class="card">
-            <span class="law-badge">Art. 12</span>
-            <h4>Fraude Informático</h4>
-            <p style="font-size: 16px;">Alteración o manipulación para obtener un beneficio económico indebido.</p>
-        </div>
-        <div class="card">
-            <span class="law-badge">Art. 5</span>
-            <h4>Intervención de Datos</h4>
-            <p style="font-size: 16px;">Acceso no autorizado a programas o datos contenidos en un sistema.</p>
-        </div>
-        <div class="card">
-            <span class="law-badge">Art. 13</span>
-            <h4>Espionaje</h4>
-            <p style="font-size: 16px;">Obtención, revelación o difusión de datos reservados o sensibles.</p>
-        </div>
-        <div class="card" style="border: 2px dashed var(--accent);">
-            <i class="fas fa-info-circle"></i>
-            <h4>Rol del Auditor</h4>
-            <p style="font-size: 16px;">El auditor debe saber tipificar el hallazgo para derivarlo legalmente.</p>
-        </div>
-    </div>
+<footer>✨ Mi sueño del futuro ✨</footer>
+
 </div>
 
-<!-- Slide 4: Caso Práctico (Resumen) -->
-<div class="slide">
-    <div class="slide-header">
-        <h2>Caso: Incidente Universidad Alpha</h2>
-    </div>
-    <div class="grid-2">
-        <div style="font-size: 18px;">
-            <p><strong>Escenario:</strong> Auditoría interna detecta múltiples irregularidades en el semestre:</p>
-            <div style="margin-bottom: 15px;">
-                <span class="case-label">Evento A</span>
-                <span>Estudiante modifica notas usando clave de docente.</span>
-            </div>
-            <div style="margin-bottom: 15px;">
-                <span class="case-label">Evento B</span>
-                <span>Empleado extrae base de datos para venderla.</span>
-            </div>
-            <div style="margin-bottom: 15px;">
-                <span class="case-label">Evento C</span>
-                <span>Alteración de pagos financieros (Fraude).</span>
-            </div>
-            <div style="margin-bottom: 15px;">
-                <span class="case-label">Evento D</span>
-                <span>Acceso a expedientes médicos (Privacidad).</span>
-            </div>
-        </div>
-        <div class="card" style="background: #fff; border-left: 5px solid #3b82f6;">
-            <h3>Actividad de Análisis (1h)</h3>
-            <ol style="font-size: 16px;">
-                <li><strong>Identificar:</strong> Qué acciones son delitos.</li>
-                <li><strong>Tipificar:</strong> Relacionar con Artículos de Ley 1042.</li>
-                <li><strong>Evaluar:</strong> Fallas de control (Contraseñas, Logins).</li>
-                <li><strong>Evidencia:</strong> ¿Qué buscaría un auditor?</li>
-            </ol>
-            <p style="font-style: italic; color: #64748b; font-size: 14px; margin-top: 20px;">*Trabajar en parejas. Presentar matriz de hallazgos.*</p>
-        </div>
-    </div>
 </div>
 
-<!-- Slide 5: Guía de Evidencia -->
-<div class="slide">
-    <div class="slide-header">
-        <h2>El Rastro Digital (Evidencia)</h2>
-    </div>
-    <div class="grid-2" style="align-items: center;">
-        <div>
-            <div class="card" style="margin-bottom: 20px;">
-                <h4><i class="fas fa-fingerprint"></i> Logs de Sistema</h4>
-                <p>Registros de intentos fallidos, horas de acceso y direcciones IP sospechosas.</p>
-            </div>
-            <div class="card">
-                <h4><i class="fas fa-history"></i> Logs de Base de Datos</h4>
-                <p>Historial de transacciones (Trigger logs) que muestran el valor anterior vs. nuevo.</p>
-            </div>
-        </div>
-        <div style="text-align: center;">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/11796035041927708307" alt="Ciberseguridad y leyes datos digitales" style="width: 100%; border-radius: 20px;">
-            <p style="color: #64748b; font-size: 14px;">"Sin evidencia preservada, no hay caso legal."</p>
-        </div>
-    </div>
+<!-- CODIGO -->
+<div class="codigo">
+<h2>💻 Código Preview</h2>
+<pre id="codigoHTML"></pre>
 </div>
+
+<script>
+const nombre = document.getElementById("nombre");
+const profesion = document.getElementById("profesion");
+const descripcion = document.getElementById("descripcion");
+const servicio = document.getElementById("servicio");
+const fotoLocal = document.getElementById("fotoLocal");
+
+const colorBody = document.getElementById("colorBody");
+const colorCaja = document.getElementById("colorCaja");
+const colorTitulo = document.getElementById("colorTitulo");
+
+let imagenActual =
+"https://cdn.pixabay.com/photo/2017/08/06/00/24/doctor-2587298_1280.jpg";
+
+/* FOTO LOCAL */
+fotoLocal.addEventListener("change", function(){
+
+const archivo = this.files[0];
+
+if(archivo){
+    const lector = new FileReader();
+
+    lector.onload = function(e){
+        imagenActual = e.target.result;
+        document.getElementById("imagen").src = imagenActual;
+        actualizar();
+    }
+
+    lector.readAsDataURL(archivo);
+}
+
+});
+
+function actualizar(){
+
+document.getElementById("titulo").innerText =
+"Soy " + nombre.value + ", futuro " + profesion.value;
+
+document.getElementById("texto").innerText =
+descripcion.value;
+
+document.getElementById("servicioBox").innerText =
+servicio.value;
+
+/* COLORES */
+document.body.style.background = colorBody.value;
+
+document.getElementById("caja").style.background =
+colorCaja.value;
+
+document.getElementById("titulo").style.color =
+colorTitulo.value;
+
+/* CÓDIGO EN VIVO */
+document.getElementById("codigoHTML").innerText =
+
+`<body style="background:${colorBody.value};">
+
+<div class="contenedor"
+style="background:${colorCaja.value};">
+
+<h1 style="color:${colorTitulo.value};">
+Soy ${nombre.value}, futuro ${profesion.value}
+</h1>
+
+<img src="foto_local.jpg">
+
+<p>
+${descripcion.value}
+</p>
+
+<div class="servicio">
+${servicio.value}
+</div>
+
+<footer>
+✨ Mi sueño del futuro ✨
+</footer>
+
+</div>
+
+</body>`;
+
+}
+
+document.querySelectorAll("input, textarea").forEach(campo=>{
+campo.addEventListener("input", actualizar);
+});
+
+actualizar();
+</script>
 
 </body>
 </html>
